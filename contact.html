@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Patrick Technician</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="logo-text">Patrick <span>Technician</span></div>
+                </a>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="index.html#booking" class="btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <span>Contact Us</span>
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p class="section-subtitle">Contact us for service inquiries, quotes, or emergency assistance</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll respond within 2 hours during business hours.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <input type="text" id="contact-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number *</label>
+                                <input type="tel" id="contact-phone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <select id="contact-subject" class="form-control">
+                                <option value="">Select a subject</option>
+                                <option value="service-inquiry">Service Inquiry</option>
+                                <option value="quote-request">Quote Request</option>
+                                <option value="emergency">Emergency Service</option>
+                                <option value="general">General Question</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" class="form-control" rows="6" required placeholder="How can we help you today?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <input type="checkbox" id="contact-newsletter" checked>
+                                <label for="contact-newsletter">Receive helpful tips and service updates (optional)</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info Sidebar -->
+                <div class="contact-info-sidebar">
+                    <!-- Emergency Banner -->
+                    <div class="emergency-banner">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Emergency Service</h3>
+                        <p>Available 24/7 for electrical emergencies, no power, or critical technical issues</p>
+                        <a href="tel:+15551234567" class="btn btn-emergency">
+                            <i class="fas fa-phone"></i> Call Now: (555) 123-4567
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <a href="tel:+15551234567">(555) 123-4567</a>
+                                    <p class="small">Main Line</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div>
+                                    <h4>Text Message</h4>
+                                    <a href="sms:+15551234567">(555) 123-4567</a>
+                                    <p class="small">Quick responses</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:contact@patricktechnician.com">contact@patricktechnician.com</a>
+                                    <p class="small">General inquiries</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Business Hours</h4>
+                                    <p><strong>Mon-Fri:</strong> 8:00 AM - 8:00 PM</p>
+                                    <p><strong>Sat-Sun:</strong> 9:00 AM - 5:00 PM</p>
+                                    <p><strong>Emergency:</strong> 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Areas -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Service Areas</h3>
+                        <p>We proudly serve the following areas:</p>
+                        <div class="service-areas">
+                            <span class="area-tag">Metro City</span>
+                            <span class="area-tag">Downtown</span>
+                            <span class="area-tag">Northside</span>
+                            <span class="area-tag">Southside</span>
+                            <span class="area-tag">East End</span>
+                            <span class="area-tag">Westgate</span>
+                            <span class="area-tag">Suburban Heights</span>
+                            <span class="area-tag">Riverside</span>
+                            <span class="area-tag">Lakeview</span>
+                            <span class="area-tag">Mountain Park</span>
+                        </div>
+                        <p class="note">* Travel fees may apply outside primary service area</p>
+                    </div>
+                    
+                    <!-- Response Time -->
+                    <div class="info-card">
+                        <h3><i class="fas fa-bolt"></i> Fast Response Times</h3>
+                        <div class="response-times">
+                            <div class="response-item">
+                                <div class="response-icon">
+                                    <i class="fas fa-ambulance"></i>
+                                </div>
+                                <div>
+                                    <h4>Emergency</h4>
+                                    <p>1-2 hour response</p>
+                                </div>
+                            </div>
+                            <div class="response-item">
+                                <div class="response-icon">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h4>Same-Day</h4>
+                                    <p>Within 4-6 hours</p>
+                                </div>
+                            </div>
+                            <div class="response-item">
+                                <div class="response-icon">
+                                    <i class="fas fa-calendar-week"></i>
+                                </div>
+                                <div>
+                                    <h4>Next-Day</h4>
+                                    <p>Scheduled appointments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2>Service Area Map</h2>
+                <p>We service the entire Metro City area and surrounding communities up to 50 miles radius.</p>
+                <div id="map" style="height: 400px; border-radius: 8px; margin-top: 20px; box-shadow: var(--shadow);"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #1A237E;"></div>
+                        <span>Primary Service Area</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #3F51B5;"></div>
+                        <span>Extended Service Area</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #FFD700;"></div>
+                        <span>Emergency Service Area</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What are your service hours? <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our standard business hours are Monday-Friday 8AM-8PM and Saturday-Sunday 9AM-5PM. However, we offer 24/7 emergency services for urgent electrical and critical technical issues.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do you offer free estimates? <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer free phone estimates for most services. For complex projects, we provide free on-site consultations to assess your needs and provide an accurate quote.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What payment methods do you accept? <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept cash, check, credit cards (Visa, MasterCard, American Express), and digital payments (Apple Pay, Google Pay). For larger projects, we offer payment plans.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Are you licensed and insured? <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We are fully licensed electricians (#EL123456) and carry $2 million in liability insurance. We're also certified for computer repair and network installation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How quickly can you respond to emergencies? <i class="fas fa-chevron-down"></i></h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We guarantee a 1-2 hour response time for emergency calls within our primary service area. For life-threatening electrical emergencies, we'll dispatch immediately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Alternative Contact -->
+            <div class="alternative-contact">
+                <h2>Other Ways to Connect</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </div>
+                        <h4>Facebook Messenger</h4>
+                        <p>Message us on Facebook for quick responses</p>
+                        <a href="#" class="btn btn-tech">Message Now</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <p>Text or call via WhatsApp</p>
+                        <a href="#" class="btn btn-tech">+1 (555) 123-4567</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Live Chat</h4>
+                        <p>Chat with us during business hours</p>
+                        <button class="btn btn-tech" id="liveChatBtn">Start Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <a href="index.html">
+                            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="logo-text">Patrick <span>Technician</span></div>
+                        </a>
+                    </div>
+                    <p>Complete technical solutions for home and business. One technician for electrical, computer, TV, and internet services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#booking">Book Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#electrical">Electrical Services</a></li>
+                        <li><a href="services.html#computer">Computer Services</a></li>
+                        <li><a href="services.html#tv">Smart TV Services</a></li>
+                        <li><a href="services.html#internet">Internet Solutions</a></li>
+                        <li><a href="services.html#emergency">Emergency Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+15551234567">(555) 123-4567</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@patricktechnician.com">contact@patricktechnician.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Serving Metro City & Surrounding Areas</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Emergency Service Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear">2023</span> Patrick Technician. All rights reserved. | License #TEC123456</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a> | 
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeContactModal">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+            <h2>Message Sent!</h2>
+            <p>Thank you for contacting Patrick Technician. We have received your message and will respond within 2 hours during business hours.</p>
+            <div class="modal-details">
+                <p><strong>For immediate assistance:</strong></p>
+                <a href="tel:+15551234567" class="btn btn-emergency"><i class="fas fa-phone"></i> Call Now: (555) 123-4567</a>
+            </div>
+            <button class="btn" id="contactModalCloseBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Contact Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize map
+            initMap();
+            
+            // Handle contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactSubmit);
+            }
+            
+            // FAQ Accordion
+            initFAQAccordion();
+            
+            // Live Chat button
+            const liveChatBtn = document.getElementById('liveChatBtn');
+            if (liveChatBtn) {
+                liveChatBtn.addEventListener('click', function() {
+                    alert('Live chat is available Monday-Friday 9AM-5PM. Please call for immediate assistance.');
+                });
+            }
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('contact-phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', formatPhoneNumber);
+            }
+            
+            // Contact modal handling
+            const contactModal = document.getElementById('contactModal');
+            const closeContactModal = document.getElementById('closeContactModal');
+            const contactModalCloseBtn = document.getElementById('contactModalCloseBtn');
+            
+            if (closeContactModal) {
+                closeContactModal.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+            }
+            
+            if (contactModalCloseBtn) {
+                contactModalCloseBtn.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+            }
+            
+            window.addEventListener('click', (e) => {
+                if (e.target === contactModal) {
+                    contactModal.style.display = 'none';
+                }
+            });
+        });
+        
+        // Initialize map
+        function initMap() {
+            // Default coordinates for Metro City area
+            const map = L.map('map').setView([40.7128, -74.0060], 11);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            // Add service area circles
+            // Primary service area (10 mile radius)
+            L.circle([40.7128, -74.0060], {
+                color: '#1A237E',
+                fillColor: '#1A237E',
+                fillOpacity: 0.2,
+                radius: 16093 // 10 miles in meters
+            }).addTo(map);
+            
+            // Extended service area (25 mile radius)
+            L.circle([40.7128, -74.0060], {
+                color: '#3F51B5',
+                fillColor: '#3F51B5',
+                fillOpacity: 0.1,
+                radius: 40233 // 25 miles in meters
+            }).addTo(map);
+            
+            // Emergency service area (50 mile radius)
+            L.circle([40.7128, -74.0060], {
+                color: '#FFD700',
+                fillColor: '#FFD700',
+                fillOpacity: 0.05,
+                radius: 80467 // 50 miles in meters
+            }).addTo(map);
+            
+            // Add marker for business location
+            L.marker([40.7128, -74.0060]).addTo(map)
+                .bindPopup('<b>Patrick Technician</b><br>Service Area Center<br>Metro City')
+                .openPopup();
+        }
+        
+        // Handle contact form submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('contact-name').value,
+                phone: document.getElementById('contact-phone').value,
+                email: document.getElementById('contact-email').value,
+                subject: document.getElementById('contact-subject').value,
+                message: document.getElementById('contact-message').value,
+                newsletter: document.getElementById('contact-newsletter').checked,
+                submittedAt: new Date().toISOString()
+            };
+            
+            // Validate form
+            if (!validateContactForm(formData)) {
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate sending
+            setTimeout(() => {
+                // Show success modal
+                const contactModal = document.getElementById('contactModal');
+                if (contactModal) {
+                    contactModal.style.display = 'flex';
+                    
+                    // Update modal with contact details
+                    updateContactModal(formData);
+                }
+                
+                // Reset form
+                e.target.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Log contact (in real app, this would go to server)
+                console.log('Contact form submitted:', formData);
+                saveContactToLocalStorage(formData);
+            }, 1500);
+        }
+        
+        // Validate contact form
+        function validateContactForm(formData) {
+            // Check required fields
+            if (!formData.name || !formData.phone || !formData.email || !formData.message) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // Validate phone (basic validation)
+            const phoneDigits = formData.phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10) {
+                alert('Please enter a valid phone number.');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Update contact modal content
+        function updateContactModal(formData) {
+            const subjectNames = {
+                'service-inquiry': 'Service Inquiry',
+                'quote-request': 'Quote Request',
+                'emergency': 'Emergency Service',
+                'general': 'General Question',
+                'billing': 'Billing Question',
+                'feedback': 'Feedback'
+            };
+            
+            const subjectName = subjectNames[formData.subject] || 'Message';
+            
+            // Update modal text
+            const modalText = document.querySelector('#contactModal .modal-content p');
+            if (modalText) {
+                modalText.innerHTML = `
+                    Thank you <strong>${formData.name}</strong> for your ${subjectName}. 
+                    We have received your message and will respond to <strong>${formData.email}</strong> 
+                    within 2 hours during business hours.
+                `;
+            }
+        }
+        
+        // Save contact to localStorage
+        function saveContactToLocalStorage(contactData) {
+            try {
+                // Get existing contacts or initialize empty array
+                const existingContacts = JSON.parse(localStorage.getItem('patrickContacts')) || [];
+                
+                // Add new contact
+                existingContacts.push({
+                    ...contactData,
+                    id: Date.now(),
+                    read: false
+                });
+                
+                // Save back to localStorage (limit to last 20 contacts)
+                const recentContacts = existingContacts.slice(-20);
+                localStorage.setItem('patrickContacts', JSON.stringify(recentContacts));
+                
+                console.log('Contact saved to localStorage.');
+            } catch (error) {
+                console.error('Error saving to localStorage:', error);
+            }
+        }
+        
+        // Initialize FAQ accordion
+        function initFAQAccordion() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle active class
+                    faqItem.classList.toggle('active');
+                    
+                    // Toggle icon
+                    if (faqItem.classList.contains('active')) {
+                        icon.className = 'fas fa-chevron-up';
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        icon.className = 'fas fa-chevron-down';
+                        answer.style.maxHeight = null;
+                    }
+                    
+                    // Close other FAQ items
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            const otherItem = otherQuestion.parentElement;
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherIcon = otherQuestion.querySelector('i');
+                            
+                            otherItem.classList.remove('active');
+                            otherIcon.className = 'fas fa-chevron-down';
+                            otherAnswer.style.maxHeight = null;
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Phone number formatting (reuse from booking.js)
+        function formatPhoneNumber(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 10) {
+                value = value.substring(0, 10);
+            }
+            
+            // Format as (XXX) XXX-XXXX
+            if (value.length > 6) {
+                value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+            } else if (value.length > 3) {
+                value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+            } else if (value.length > 0) {
+                value = `(${value}`;
+            }
+            
+            e.target.value = value;
+        }
+    </script>
+    
+    <!-- Contact Page Specific Styles -->
+    <style>
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .contact-detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-detail-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .contact-detail-item h4 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .contact-detail-item a {
+            color: var(--tech-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-detail-item a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-detail-item .small {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 3px;
+        }
+        
+        .response-times {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .response-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .response-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .response-item h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .response-item p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .map-section {
+            margin-top: 80px;
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .map-section h2 {
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .map-section > p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .faq-section {
+            margin-top: 80px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--light);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question h4 {
+            color: var(--secondary);
+            margin: 0;
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+        }
+        
+        .alternative-contact {
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .alternative-contact h2 {
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-method {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .method-icon {
+            font-size: 3rem;
+            color: var(--tech-blue);
+            margin-bottom: 20px;
+        }
+        
+        .contact-method h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .contact-method p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+        
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .checkbox input {
+            margin-top: 5px;
+        }
+        
+        .checkbox label {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-detail-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-legend {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</body>
+</html>

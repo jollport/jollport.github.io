@@ -1,0 +1,182 @@
+/* Responsive Styles for Patrick Technician Website */
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 150px 0 80px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Features */
+    .features {
+        flex-direction: column;
+    }
+    
+    .feature {
+        min-width: 100%;
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Forms */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .booking-form {
+        padding: 30px 20px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .modal-content {
+        padding: 30px 20px;
+    }
+    
+    .service-detail h2 {
+        font-size: 1.5rem;
+    }
+    
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, footer, .hero-btns, .booking-form, .mobile-toggle {
+        display: none !important;
+    }
+    
+    .hero {
+        padding: 50px 0 !important;
+        background: none !important;
+        color: black !important;
+    }
+    
+    .hero h1 {
+        color: black !important;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+}

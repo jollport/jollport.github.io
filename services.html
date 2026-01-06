@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Patrick Technician</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="logo-text">Patrick <span>Technician</span></div>
+                </a>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#booking" class="btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <span>Services</span>
+        </div>
+    </div>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Comprehensive Services</h1>
+            <p class="section-subtitle">One technician for all your technical needs - electrical, computer, TV, and internet solutions</p>
+        </div>
+    </section>
+
+    <!-- Service Tabs -->
+    <section class="services-tabs-section">
+        <div class="container">
+            <div class="services-tabs">
+                <button class="tab-btn active" data-category="electrical">
+                    <i class="fas fa-bolt"></i> Electrical
+                </button>
+                <button class="tab-btn" data-category="computer">
+                    <i class="fas fa-laptop"></i> Computer
+                </button>
+                <button class="tab-btn" data-category="tv">
+                    <i class="fas fa-tv"></i> Smart TV
+                </button>
+                <button class="tab-btn" data-category="internet">
+                    <i class="fas fa-wifi"></i> Internet
+                </button>
+            </div>
+            
+            <!-- Electrical Services -->
+            <div id="electrical-services" class="service-section">
+                <div class="service-detail">
+                    <h2>Electrical Services</h2>
+                    <p>Professional electrical services for residential and commercial properties. Licensed, insured, and up to code.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <h4>Residential Electrical</h4>
+                            <p>Wiring, lighting, panel upgrades, outlet installation, GFCI installation, and electrical inspections.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Commercial Electrical</h4>
+                            <p>Office wiring, lighting retrofits, panel upgrades, data cabling, and commercial installations.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Emergency Electrical</h4>
+                            <p>24/7 emergency service for power outages, electrical hazards, and urgent repairs.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Electrical Safety</h4>
+                            <p>Safety inspections, code compliance, arc fault protection, and surge protection installation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Computer Services -->
+            <div id="computer-services" class="service-section" style="display: none;">
+                <div class="service-detail">
+                    <h2>Computer Services</h2>
+                    <p>Comprehensive computer repair, maintenance, and support for all brands and operating systems.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <h4>Computer Repair</h4>
+                            <p>Hardware diagnostics, component replacement, screen repair, and performance optimization.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Virus Removal</h4>
+                            <p>Malware/virus removal, security software installation, and system protection setup.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Data Recovery</h4>
+                            <p>Hard drive recovery, data backup solutions, and file restoration from damaged devices.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Network Setup</h4>
+                            <p>Home/office network installation, printer sharing, and device connectivity solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Smart TV Services -->
+            <div id="tv-services" class="service-section" style="display: none;">
+                <div class="service-detail">
+                    <h2>Smart TV Services</h2>
+                    <p>Professional TV installation, mounting, setup, and troubleshooting for all brands and models.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <h4>TV Mounting</h4>
+                            <p>Wall mounting, bracket installation, cable management, and optimal positioning.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Smart TV Setup</h4>
+                            <p>Streaming app installation, account setup, network connectivity, and remote programming.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Home Theater</h4>
+                            <p>Sound system installation, AV receiver setup, speaker placement, and calibration.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Troubleshooting</h4>
+                            <p>Picture/sound issues, connectivity problems, software updates, and remote control pairing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Internet Services -->
+            <div id="internet-services" class="service-section" style="display: none;">
+                <div class="service-detail">
+                    <h2>Internet Solutions</h2>
+                    <p>WiFi setup, network optimization, troubleshooting, and complete internet solutions for home and business.</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <h4>WiFi Setup</h4>
+                            <p>Router installation, network configuration, SSID/password setup, and security configuration.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Network Optimization</h4>
+                            <p>Signal boosting, dead zone elimination, mesh network setup, and speed optimization.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Troubleshooting</h4>
+                            <p>Connection issues, slow speeds, intermittent drops, and ISP coordination.</p>
+                        </div>
+                        <div class="service-feature">
+                            <h4>Business Networks</h4>
+                            <p>Office network setup, multiple access points, VLAN configuration, and business-grade solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Table -->
+            <div class="pricing-section">
+                <h2>Service Pricing</h2>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Type</th>
+                                <th>Starting Price</th>
+                                <th>Time Required</th>
+                                <th>Warranty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electrical Consultation</td>
+                                <td>$79</td>
+                                <td>1 hour</td>
+                                <td>90 days</td>
+                            </tr>
+                            <tr>
+                                <td>Computer Diagnosis</td>
+                                <td>$59</td>
+                                <td>30 min</td>
+                                <td>60 days</td>
+                            </tr>
+                            <tr>
+                                <td>TV Mounting</td>
+                                <td>$99</td>
+                                <td>1-2 hours</td>
+                                <td>1 year</td>
+                            </tr>
+                            <tr>
+                                <td>WiFi Setup</td>
+                                <td>$89</td>
+                                <td>1 hour</td>
+                                <td>60 days</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Service</td>
+                                <td>$129</td>
+                                <td>Varies</td>
+                                <td>90 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="note">* All prices include labor. Parts and materials are additional. Contact for exact quote.</p>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-section">
+                <h2>Ready to Schedule Service?</h2>
+                <p>Book online or call for immediate assistance</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-secondary">Book Online</a>
+                    <a href="tel:+15551234567" class="btn btn-emergency"><i class="fas fa-phone"></i> Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <a href="index.html">
+                            <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="logo-text">Patrick <span>Technician</span></div>
+                        </a>
+                    </div>
+                    <p>Complete technical solutions for home and business. One technician for electrical, computer, TV, and internet services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#booking">Book Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#electrical">Electrical Services</a></li>
+                        <li><a href="services.html#computer">Computer Services</a></li>
+                        <li><a href="services.html#tv">Smart TV Services</a></li>
+                        <li><a href="services.html#internet">Internet Solutions</a></li>
+                        <li><a href="services.html#emergency">Emergency Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+15551234567">(555) 123-4567</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@patricktechnician.com">contact@patricktechnician.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Serving Metro City & Surrounding Areas</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Emergency Service Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear">2023</span> Patrick Technician. All rights reserved. | License #TEC123456</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a> | 
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

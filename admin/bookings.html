@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings | Admin Panel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <!-- Sidebar -->
+    <div class="admin-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">Patrick <span>Technician</span></div>
+            </div>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="bookings.html" class="menu-item active">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Bookings</span>
+                <span class="badge" id="pendingBadge">0</span>
+            </a>
+            <a href="customers.html" class="menu-item">
+                <i class="fas fa-users"></i>
+                <span>Customers</span>
+            </a>
+            <a href="services.html" class="menu-item">
+                <i class="fas fa-cogs"></i>
+                <span>Services</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fas fa-sliders-h"></i>
+                <span>Settings</span>
+            </a>
+            <a href="../index.html" class="menu-item">
+                <i class="fas fa-external-link-alt"></i>
+                <span>View Website</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <span class="admin-username">A</span>
+                </div>
+                <div>
+                    <div class="user-name admin-username">Admin</div>
+                    <div class="user-role">Administrator</div>
+                </div>
+            </div>
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="admin-main">
+        <!-- Header -->
+        <div class="admin-header">
+            <div class="header-left">
+                <h1>Manage Bookings</h1>
+                <p>View and manage all service bookings</p>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary" onclick="exportBookings()">
+                    <i class="fas fa-download"></i> Export CSV
+                </button>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="admin-content">
+            <!-- Filters -->
+            <div class="filters-card">
+                <h3><i class="fas fa-filter"></i> Filters</h3>
+                <div class="filter-controls">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="statusFilter" class="form-control" onchange="filterBookings()">
+                                <option value="">All Statuses</option>
+                                <option value="pending">Pending</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Service Type</label>
+                            <select id="serviceFilter" class="form-control" onchange="filterBookings()">
+                                <option value="">All Services</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="computer">Computer</option>
+                                <option value="tv">Smart TV</option>
+                                <option value="internet">Internet</option>
+                                <option value="emergency">Emergency</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Date Range</label>
+                            <input type="date" id="dateFrom" class="form-control" onchange="filterBookings()">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input type="date" id="dateTo" class="form-control" onchange="filterBookings()">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button class="btn btn-secondary" onclick="clearFilters()">
+                                <i class="fas fa-times"></i> Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bookings Table -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3><i class="fas fa-list"></i> All Bookings</h3>
+                    <div class="table-actions">
+                        <input type="text" id="searchBookings" class="form-control" placeholder="Search bookings..." onkeyup="searchBookings()">
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Contact</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTable">
+                            <!-- Bookings will be loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-footer">
+                    <div class="table-info" id="tableInfo">
+                        Showing 0 bookings
+                    </div>
+                    <div class="table-pagination">
+                        <button class="btn btn-pagination" onclick="previousPage()" disabled id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="page-info" id="pageInfo">Page 1 of 1</span>
+                        <button class="btn btn-pagination" onclick="nextPage()" disabled id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Details Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Booking Details</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="bookingDetails">
+                <!-- Booking details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                <button class="btn btn-primary" onclick="printBooking()">
+                    <i class="fas fa-print"></i> Print
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-bookings.js"></script>
+    <script>
+        // Mobile sidebar toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+        
+        // Initialize bookings management
+        if (typeof initBookings === 'function') {
+            initBookings();
+        }
+        
+        // Update notification count
+        function updateNotifications() {
+            const bookings = JSON.parse(localStorage.getItem('patrickBookings')) || [];
+            const pendingCount = bookings.filter(b => b.status === 'pending').length;
+            
+            const pendingBadge = document.getElementById('pendingBadge');
+            if (pendingBadge) {
+                pendingBadge.textContent = pendingCount;
+                pendingBadge.style.display = pendingCount > 0 ? 'inline-block' : 'none';
+            }
+        }
+        
+        // Call update notifications
+        updateNotifications();
+        
+        // Modal functions
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+        
+        function printBooking() {
+            const printContent = document.getElementById('bookingDetails').innerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            document.body.innerHTML = `
+                <html>
+                    <head>
+                        <title>Booking Details</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 20px; }
+                            h2 { color: #1A237E; }
+                            .detail-row { margin-bottom: 10px; }
+                            .label { font-weight: bold; color: #666; }
+                        </style>
+                    </head>
+                    <body>
+                        <h2>Booking Details</h2>
+                        ${printContent}
+                    </body>
+                </html>
+            `;
+            
+            window.print();
+            document.body.innerHTML = originalContent;
+            location.reload();
+        }
+        
+        // Add missing CSS for bookings page
+        const style = document.createElement('style');
+        style.textContent = `
+            .filters-card {
+                background-color: var(--admin-card);
+                border-radius: 10px;
+                padding: 25px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+            
+            .filter-controls {
+                margin-top: 20px;
+            }
+            
+            .table-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .table-actions {
+                width: 300px;
+            }
+            
+            .table-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--admin-border);
+            }
+            
+            .table-info {
+                color: #666;
+            }
+            
+            .table-pagination {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .btn-pagination {
+                width: 36px;
+                height: 36px;
+                border-radius: 6px;
+                border: 1px solid var(--admin-border);
+                background-color: white;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .btn-pagination:hover {
+                background-color: var(--admin-bg);
+            }
+            
+            .btn-pagination:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            
+            .page-info {
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .badge {
+                background-color: var(--admin-danger);
+                color: white;
+                font-size: 0.7rem;
+                padding: 2px 6px;
+                border-radius: 10px;
+                margin-left: 5px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
